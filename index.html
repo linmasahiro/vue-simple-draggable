@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src * gap: ws: https://ssl.gstatic.com;style-src * 'unsafe-inline' 'self' data: blob:;script-src * 'unsafe-inline' 'unsafe-eval' data: blob:;img-src * data: 'unsafe-inline' 'self'">
+    <title>Vue Draggable Sample</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <link rel="stylesheet" href="./css/style.css">
+  <body style="margin: auto;">
+    <div id="app">
+      <div 
+        class="list"
+        :key="listIndex"
+        v-for="(rows, listIndex) in listData" 
+        @dragover="dragOver(listIndex)"
+      >
+        <div class="list-name">
+          List {{ listIndex + 1 }}
+        </div>
+        <div class="block-wrap">
+          <div
+            class="block"
+            draggable="true"
+            v-for="(row, rowIndex) in rows"
+            :key="rowIndex"
+            @dragstart="dragStart($event, listIndex, rowIndex)"
+            @dragend="dragEnd"
+          >
+            {{ row.title }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script type="text/javascript" src="./src/app.js"></script>
+</html>

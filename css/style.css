@@ -1,0 +1,28 @@
+#app {
+    display: flex;
+}
+
+.list {
+    height: auto;
+    width: 50%;
+    background-color: #f1c4c4;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.list-name {
+    padding: 5px;
+}
+
+.block-wrap {
+    display: block;
+}
+
+.block {
+    display: block;
+    background-color: white;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
