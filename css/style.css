@@ -1,5 +1,9 @@
-#app {
+.list-area {
     display: flex;
+}
+
+.list-name {
+    padding: 5px;
 }
 
 .list {
@@ -8,21 +12,27 @@
     background-color: #f1c4c4;
     margin: 10px;
     border-radius: 5px;
-}
-
-.list-name {
-    padding: 5px;
+    transition-property: background;
+    transition-duration: 0.3s;
 }
 
 .block-wrap {
     display: block;
+    height: auto;
+    width: 100%;
 }
 
 .block {
     display: block;
+    position: relative;
     background-color: white;
-    margin: 10px;
-    padding: 10px;
     border-radius: 5px;
     cursor: pointer;
+    opacity: 1;
+    border: 2px solid white;
+    transition-property: opacity;
+    transition-duration: 0.5s;
+    top: 0px;
+    margin: 10px;
+    padding: 10px;
 }

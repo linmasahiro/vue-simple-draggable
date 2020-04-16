@@ -9,27 +9,36 @@
   <link rel="stylesheet" href="./css/style.css">
   <body style="margin: auto;">
     <div id="app">
-      <div 
-        class="list"
-        :key="listIndex"
-        v-for="(rows, listIndex) in listData" 
-        @dragover="dragOver(listIndex)"
-      >
-        <div class="list-name">
-          List {{ listIndex + 1 }}
-        </div>
-        <div class="block-wrap">
-          <div
-            class="block"
-            draggable="true"
-            v-for="(row, rowIndex) in rows"
-            :key="rowIndex"
-            @dragstart="dragStart($event, listIndex, rowIndex)"
-            @dragend="dragEnd"
-          >
-            {{ row.title }}
+      <div class="list-area">
+        <div 
+          :ref="'list'"
+          :key="listIndex"
+          :class="'list'"
+          v-for="(rows, listIndex) in listData"
+          @dragenter="dragenter($event, listIndex)"
+          @dragover="dragover"
+        >
+          <div class="list-name">
+            List {{ listIndex + 1 }}
+          </div>
+          <div class="block-wrap">
+            <div
+              v-for="(row, rowIndex) in rows"
+              :ref="'block_' + listIndex + '_' + rowIndex"
+              :key="rowIndex"
+              :class="'block'"
+              :draggable="'true'"
+              :position="listIndex + '_' + rowIndex"
+              @dragstart="dragStart($event, listIndex, rowIndex)"
+              @dragend="dragEnd"
+            >
+              {{ row.title }}
+            </div>
           </div>
         </div>
+      </div>
+      <div>
+        <button @click="addList">Add List</button>
       </div>
     </div>
   </body>
