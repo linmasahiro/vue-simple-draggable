@@ -6,6 +6,7 @@
  * @see https://github.com/linmasahiro/vue-simple-draggable
  */
 
+
 // defined a array
 const defaultListData = [
     [{
@@ -187,12 +188,12 @@ new Vue({
             let className = e.target.className
             switch (className) {
                 case "block":
-                    let targetCurrentArr = e.toElement.attributes.position.value.split("_")
+                    let targetCurrentArr = e.target.attributes.position.value.split("_")
                     let targetRowIndex = targetCurrentArr[1]
                     if (targetListIndex == this.currentListIndex && targetRowIndex == this.currentRowIndex) {
                         return
                     }
-                    element = e.toElement.parentNode.parentNode
+                    element = e.target.parentNode.parentNode
                     this.setBlockNormalStyle(this.$refs["block_" + this.currentListIndex + "_" + this.currentRowIndex][0])
                     if (targetListIndex != this.currentListIndex) {
                         this.moveList(this.currentListIndex, targetListIndex).then(() => {
@@ -212,7 +213,7 @@ new Vue({
                     break
                 case "block-wrap":
                 case "list-name":
-                    element = e.toElement.parentNode
+                    element = e.target.parentNode
                     if (this.currentListIndex != targetListIndex) {
                         this.setBlockNormalStyle(this.$refs["block_" + this.currentListIndex + "_" + this.currentRowIndex][0])
                         this.moveList(this.currentListIndex, targetListIndex).then(() => {
@@ -221,7 +222,7 @@ new Vue({
                     }
                     break
                 case "list":
-                    element = e.toElement
+                    element = e.target
                     if (this.currentListIndex != targetListIndex) {
                         this.setBlockNormalStyle(this.$refs["block_" + this.currentListIndex + "_" + this.currentRowIndex][0])
                         this.moveList(this.currentListIndex, targetListIndex).then(() => {
