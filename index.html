@@ -9,24 +9,21 @@
   <link rel="stylesheet" href="./css/style.css">
   <body style="margin: auto;">
     <div id="app">
-      <div class="list-area">
+      <div :class="listAreaClass">
         <div 
+          v-for="(rows, listIndex) in listData"
           :ref="'list'"
           :key="listIndex"
-          :class="'list'"
-          v-for="(rows, listIndex) in listData"
+          :class="defaultListClass"
           @dragenter="dragenter($event, listIndex)"
           @dragover="dragover"
         >
-          <div class="list-name">
-            List {{ listIndex + 1 }}
-          </div>
           <div class="block-wrap">
             <div
               v-for="(row, rowIndex) in rows"
               :ref="'block_' + listIndex + '_' + rowIndex"
               :key="rowIndex"
-              :class="'block'"
+              :class="defaultBlockClass"
               :draggable="'true'"
               :position="listIndex + '_' + rowIndex"
               @dragstart="dragStart($event, listIndex, rowIndex)"

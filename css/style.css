@@ -2,11 +2,8 @@
     display: flex;
 }
 
-.list-name {
-    padding: 5px;
-}
-
 .list {
+    padding: 5px;
     height: auto;
     width: 50%;
     background-color: #f1c4c4;
@@ -16,6 +13,10 @@
     transition-duration: 0.3s;
 }
 
+.list-current {
+    background-color: #c3c4f2;
+}
+
 .block-wrap {
     display: block;
     height: auto;
@@ -23,16 +24,21 @@
 }
 
 .block {
+    top: 0px;
+    margin: 10px;
+    padding: 10px;
     display: block;
     position: relative;
+    border: 2px solid white;
     background-color: white;
     border-radius: 5px;
     cursor: pointer;
     opacity: 1;
-    border: 2px solid white;
     transition-property: opacity;
     transition-duration: 0.5s;
-    top: 0px;
-    margin: 10px;
-    padding: 10px;
+}
+
+.block-current {
+    opacity: 0.5;
+    border: 2px dotted black;
 }
