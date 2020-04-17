@@ -22,4 +22,4 @@ Vue.js have a strong component is [Vue.Draggable](https://github.com/SortableJS/
             ]
         ]
 
-### 2.Enjoi it!
+### 2.Enjoy it!
