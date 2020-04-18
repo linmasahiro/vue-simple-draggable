@@ -1,4 +1,8 @@
-# vue-simple-draggable
+vue-simple-draggable
+===============
+
+![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
+
 A Draggable(Drag and Drop) base on HTML5 and Vue.js
 
 Vue.js have a strong component is [Vue.Draggable](https://github.com/SortableJS/Vue.Draggable), but sometimes we need a very simple solution to solve problem
