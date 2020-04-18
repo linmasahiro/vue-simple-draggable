@@ -23,3 +23,5 @@ Vue.js have a strong component is [Vue.Draggable](https://github.com/SortableJS/
         ]
 
 ### 2.Enjoy it!
+
+##### 2020/04/17 supported touch mobile device
