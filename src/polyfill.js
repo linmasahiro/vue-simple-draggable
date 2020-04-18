@@ -1,3 +1,10 @@
+/*!
+ * DragDropTouch
+ * (c) 2016 Bernardo Castilho
+ * Released under the MIT License.
+ * 
+ * https://github.com/Bernardo-Castilho/dragdroptouch/blob/master/LICENSE
+ */
 var DragDropTouch;
 (function (DragDropTouch_1) {
     'use strict';
